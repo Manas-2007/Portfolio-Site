@@ -5,6 +5,8 @@ import Aboutme from './Aboutme';
 import Skills from './Skills';
 import Projects from './Projects';
 import Footer from './Footer';
+import Certifications from './Certifications';
+
 
 const FinalUI = () => {
   return (
@@ -15,6 +17,7 @@ const FinalUI = () => {
       <Aboutme />
       <Skills />
       <Projects />
+      <Certifications/>
       <Footer />
     </>
   );

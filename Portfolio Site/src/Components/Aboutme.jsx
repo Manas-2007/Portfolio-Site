@@ -52,7 +52,7 @@ const AboutMe = () => {
         <div className="w-full lg:w-[35%] flex flex-col items-start justify-center">
           
           {/* Badge */}
-          <div className="flex items-center gap-2 lg:gap-3 mb-4 lg:mb-5">
+          <div className="flex items-center gap-2 lg:gap-3 mb-4 lg:mb-3">
             <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-purple-500 shadow-[0_0_8px_rgba(168,85,247,0.8)] animate-pulse"></span>
             <span className="text-[10px] lg:text-[11px] font-bold tracking-[0.2em] text-purple-400 uppercase">
               About Me
@@ -60,8 +60,8 @@ const AboutMe = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-white mb-4 lg:mb-6 tracking-tight">
-            Who I Am
+          <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-white mb-4 lg:mb-4 tracking-tight">
+            Who I'm
           </h2>
 
           {/* Bio Text */}
