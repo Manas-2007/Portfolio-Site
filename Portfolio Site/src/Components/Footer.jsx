@@ -18,7 +18,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer id='contact' className="relative bg-[#0a0d14] border-t border-white/5 pt-5 lg:pt-10 pb-6 overflow-hidden z-10">
+    <footer id='contact' className="relative bg-[#0a0d14] border-t border-white/5 pt-5 lg:pt-10 pb-6 px-5 md:px-12 lg:px-20 xl:px-28 overflow-hidden z-10">
       
       <style>
         {`
