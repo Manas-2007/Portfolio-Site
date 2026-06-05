@@ -6,9 +6,13 @@ import FinalUI from './Components/FinalUI';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animation kitni der chalegi (800ms ekdum premium lagta hai)
-      offset: 100,   // Element thoda screen me aane ke baad animate hoga
-      once: false,   // 'false' matlab jab bhi scroll karoge, animation dobara chalegi
+      duration: 800,
+      offset: 100,   
+      once: false,  
+      mirror:true, 
+    });
+ window.addEventListener('hashchange', () => {
+      setTimeout(() => AOS.refresh(), 100);
     });
   }, []);
 
