@@ -2,3 +2,32 @@ html {
   scroll-behavior: smooth; 
   scroll-padding-top: 100px; 
 }
+
+/* =========================================
+   🔥 PREMIUM CUSTOM SCROLLBAR 🔥
+========================================= */
+
+/* Firefox ke liye */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a855f7 #050505; /* Thumb: Purple, Track: Dark Black */
+}
+
+/* Chrome, Edge, aur Safari ke liye */
+::-webkit-scrollbar {
+  width: 8px; /* Patla aur sleek */
+}
+
+::-webkit-scrollbar-track {
+  background: #050505; /* Track ka background (dark) */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a855f7, #06b6d4); /* Purple to Cyan gradient */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #d946ef, #22d3ee); /* Hover par thoda bright (Fuchsia to light Cyan) */
+}

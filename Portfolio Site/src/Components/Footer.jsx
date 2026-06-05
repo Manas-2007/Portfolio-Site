@@ -34,7 +34,7 @@ const Footer = () => {
       {/* Background ambient glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-purple-600/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
 
-      <div className="w-full max-w-[1300px] mx-auto px-6 md:px-12 lg:px-20 xl:px-28">
+      <div className="w-full max-w-[1300px] mx-auto">
         
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 mb-10">
