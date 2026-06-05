@@ -65,9 +65,13 @@ const Certifications = () => {
 
         {/* CERTIFICATIONS GRID */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6 w-full">
-          {certData.map((cert) => (
+          {certData.map((cert,index) => (
             <div 
               key={cert.id}
+              data-aos="zoom-in-up"                 
+              data-aos-delay={index * 150}     
+              data-aos-duration="600"               
+              data-aos-easing="ease-out-back"
               className={`group relative flex flex-col p-4 sm:p-6 rounded-2xl bg-gradient-to-b from-[#161a24] to-[#0a0d14] border overflow-hidden transition-all duration-500 hover:-translate-y-1 ${cert.borderStyle} shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]`}
             >
               

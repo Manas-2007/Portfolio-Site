@@ -84,9 +84,12 @@ const AboutMe = () => {
 
         {/* RIGHT SIDE */}
               <div className="w-full lg:w-[65%] grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
-                {cardsData.map((card) => (
+                {cardsData.map((card,index) => (
                   <div 
         key={card.id} 
+        data-aos="fade-right"
+        data-aos-delay={index * 200}
+        data-aos-duration="800"
         className={`group relative flex flex-col items-start p-4 sm:p-5 lg:p-6 rounded-xl lg:rounded-2xl bg-[#13151c] overflow-hidden min-h-[190px] sm:min-h-[220px] lg:min-h-[280px] cursor-pointer transition-all duration-500 border ${card.borderColor} shadow-[0_0_20px_rgba(168,85,247,0.15)] lg:shadow-lg lg:hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] -translate-y-1 lg:translate-y-0 lg:hover:-translate-y-1`}
       >
               <div className="absolute inset-0 bg-white/[0.02] opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 z-0"></div>

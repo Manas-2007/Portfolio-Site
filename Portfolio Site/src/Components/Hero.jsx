@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
 
         {/* LEFT COLUMN - TEXT & CONTENT */}
-    <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left justify-center relative z-10 gap-6 lg:max-w-[600px]">
+    <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left justify-center relative z-10 gap-6 lg:max-w-[600px]" data-aos="fade-right">
           
           {/* Minimal Role Badge */}
           <div className="flex items-center gap-3 mb-1 lg:mb-2">
@@ -87,8 +87,7 @@ const Hero = () => {
         </div>
 
         {/* RIGHT COLUMN - IMAGE & GRAPHICS */}
-        {/* FIX: Changed items-end to items-center and fixed height limits so it perfectly aligns with the text */}
-        <div className="w-full lg:flex-1 relative flex items-center justify-center lg:justify-end min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] z-10 mt-8 lg:mt-0">
+        <div className="w-full lg:flex-1 relative flex items-center justify-center lg:justify-end min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] z-10 mt-8 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
           
           {/* Glow Effects */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] lg:w-[500px] h-[350px] lg:h-[500px] bg-purple-600/30 rounded-full blur-[70px] lg:blur-[120px] animate-pulse -z-10"></div>
@@ -103,16 +102,14 @@ const Hero = () => {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-purple-500 rounded-full shadow-[0_0_20px_rgba(168,85,247,1)]"></div>
           </div>
 
-          {/* Profile Image - Increased max-w for desktop to fill space nicely */}
+          {/* Profile Image*/}
           <img 
             src="/profile.jpg" 
             alt="Manas" 
             className="relative z-10 w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[460px] h-auto object-contain drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]"
-            // Optional: Agar profile pic ko bottom se fade karna ho toh ye style uncomment kar lena
-            // style={{ WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 15%)' }}
           />
 
-          {/* Floating Tech Icons - Adjusted positions to scale better with the new center alignment */}
+          {/* Floating Tech Icons */}
           <div className="absolute top-[5%] lg:top-[10%] right-[75%] lg:right-[85%] p-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md animate-[bounce_4s_infinite] shadow-[0_0_15px_rgba(34,211,238,0.2)] z-20">
             <FaReact className="text-xl lg:text-3xl text-cyan-400" />
           </div>

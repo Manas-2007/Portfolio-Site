@@ -35,17 +35,24 @@ const Stats = () => {
   ];
 
   return (
-<section className="relative pb-8 lg:pb-10 px-5 md:px-12 lg:px-20 xl:px-28 w-full flex justify-center z-10">
+    <section className="relative pb-8 lg:pb-10 px-5 md:px-12 lg:px-20 xl:px-28 w-full flex justify-center z-10">
       
       {/* Main Container */}
-      <div className="w-full max-w-[1300px] bg-[#101219] border border-white/30 rounded-2xl shadow-2xl overflow-hidden">
+      {/* Main box ko bhi thoda fade-up effect de diya taaki smooth entry ho */}
+      <div 
+        data-aos="fade-up" 
+        className="w-full max-w-[1300px] bg-[#101219] border border-white/30 rounded-2xl shadow-2xl overflow-hidden"
+      >
         
         {/* Grid setup: 2 cols on mobile, 4 cols on desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-4 w-full">
           
-          {statsData.map((stat) => (
+          {/* YAHAN CHANGE KIYA HAI: map mein 'index' add kiya taaki delay calculate ho sake */}
+          {statsData.map((stat, index) => (
             <div 
               key={stat.id}
+              data-aos="fade-up" 
+              data-aos-delay={index * 150} // 0ms, 150ms, 300ms, 450ms ka delay aayega
               className={`group relative flex items-center justify-center gap-3 lg:gap-5 py-8 lg:py-10 px-4 overflow-hidden ${stat.borderClasses}`}
             >
               

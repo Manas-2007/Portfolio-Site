@@ -106,7 +106,9 @@ const Skills = () => {
               <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
                 {category.skills.map((skill, index) => (
                   <div 
-                    key={index} 
+                    key={index}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 200}
                     className="flex items-center gap-2.5 sm:gap-4 cursor-default"
                   >
                     {/* Icon Container - Scaled for mobile */}
