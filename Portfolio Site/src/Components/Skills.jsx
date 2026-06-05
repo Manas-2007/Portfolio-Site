@@ -10,16 +10,13 @@ import {
 } from 'react-icons/fa';
 
 const Skills = () => {
-  // Categorized Skills Data with DEFAULT glows, active colors, and custom border colors
   const skillCategories = [
     {
       id: 1,
       title: "Languages & Core",
-      // Distinct Blue Border matching the image
       cardStyle: "border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)]",
       floatDelay: "0s",
       skills: [
-        // Merged C and C++
         { name: "C/C++", icon: <SiCplusplus className="text-blue-400 drop-shadow-[0_0_12px_rgba(96,165,250,0.8)]" /> },
         { name: "Python", icon: <FaPython className="text-yellow-400 drop-shadow-[0_0_12px_rgba(250,204,21,0.8)]" /> },
         { name: "JavaScript", icon: <SiJavascript className="text-yellow-300 drop-shadow-[0_0_12px_rgba(253,224,71,0.8)]" /> },
@@ -29,7 +26,6 @@ const Skills = () => {
     {
       id: 2,
       title: "Frontend & UI",
-      // Distinct Cyan Border
       cardStyle: "border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.5)]",
       floatDelay: "0.2s",
       skills: [
@@ -43,7 +39,6 @@ const Skills = () => {
     {
       id: 3,
       title: "Backend & Database",
-      // Distinct Green Border
       cardStyle: "border-green-500/40 shadow-[0_0_20px_rgba(34,197,94,0.5)]",
       floatDelay: "0.4s",
       skills: [
@@ -55,7 +50,6 @@ const Skills = () => {
     {
       id: 4,
       title: "Tools & Deployment",
-      // Distinct Orange Border
       cardStyle: "border-orange-500/40 shadow-[0_0_20px_rgba(249,115,22,0.5)]",
       floatDelay: "0.6s",
       skills: [
@@ -69,7 +63,6 @@ const Skills = () => {
   return (
     <section id="skills" className="relative py-5 lg:py-10 px-5 md:px-12 lg:px-20 xl:px-28 w-full flex justify-center z-10 bg-[#0a0d14]">
       
-      {/* Custom CSS for Card Floating Animation */}
       <style>
         {`
           @keyframes float {
@@ -97,12 +90,10 @@ const Skills = () => {
           </h2>
         </div>
 
-        {/* Categories Grid - Mobile: grid-cols-2 with scaled padding/text */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-6 w-full">
           {skillCategories.map((category) => (
             <div 
               key={category.id} 
-              // Padding reduced on mobile (p-4) to fit 2 columns perfectly
               className={`flex flex-col p-4 sm:p-6 md:p-7 rounded-2xl bg-[#13151c] border ${category.cardStyle}`}
               style={{ animation: `float 4s ease-in-out infinite ${category.floatDelay}` }}
             >
@@ -122,7 +113,7 @@ const Skills = () => {
                     <div className="text-[18px] sm:text-[24px] md:text-[26px]">
                       {skill.icon}
                     </div>
-                    {/* Skill Name - Proper mobile typography to prevent wrapping */}
+                    {/* Skill Name -  mobile typography to prevent wrapping */}
                     <span className="text-gray-100 text-[11px] sm:text-[14px] md:text-[15px] font-medium tracking-wide truncate">
                       {skill.name}
                     </span>

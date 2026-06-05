@@ -34,9 +34,7 @@ const Projects = () => {
       
       <div className="w-full max-w-[1300px] flex flex-col">
         
-        {/* ======================================= */}
         {/* HEADER SECTION */}
-        {/* ======================================= */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-5 mb-8 lg:mb-7 w-full">
           
           <div className="flex flex-col items-start w-full sm:w-auto">
@@ -65,11 +63,7 @@ const Projects = () => {
 
         </div>
         
-
-       {/* ======================================= */}
         {/* PROJECTS GRID */}
-        {/* ======================================= */}
-        {/* Fixed Mobile Wrapping: grid-cols-1 for mobile, md:grid-cols-2 for tablet */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full">
           {projectsData.map((project, index) => (
             <div
@@ -91,7 +85,6 @@ const Projects = () => {
               hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]
 
               ${
-                // Updated span logic so it doesn't break single-column mobile view
                 projectsData.length % 2 !== 0 &&
                 index === projectsData.length - 1
                   ? "md:col-span-2 md:max-w-[400px] md:mx-auto lg:col-span-1 lg:max-w-none"
@@ -102,14 +95,11 @@ const Projects = () => {
               {/* Premium Hover Glow */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-500/[0.05] via-transparent to-cyan-500/[0.05] pointer-events-none"></div>
 
-              {/* ======================================= */}
               {/* IMAGE SECTION */}
-              {/* ======================================= */}
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noreferrer"
-                // Balanced height so it doesn't look too tall on mobile
                 className="relative w-full h-[180px] md:h-[190px] overflow-hidden block border-b border-white/[0.05]"
               >
                 <div
@@ -131,9 +121,7 @@ const Projects = () => {
                 </div>
               </a>
 
-              {/* ======================================= */}
               {/* CONTENT SECTION */}
-              {/* ======================================= */}
               <div className="relative z-10 flex flex-col flex-grow p-5">
 
                 {/* Title */}

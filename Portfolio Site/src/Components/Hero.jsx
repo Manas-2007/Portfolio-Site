@@ -5,12 +5,9 @@ import { SiTailwindcss, SiJavascript } from 'react-icons/si';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col lg:flex-row items-center justify-between pt-28 lg:pt-5 pb-0 px-6 md:px-12 lg:px-28 gap-12 lg:gap-4 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col lg:flex-row items-center justify-between pt-24 lg:pt-5 pb-0 px-6 md:px-12 lg:px-28 gap-12 lg:gap-4 overflow-hidden">
       
-      {/* ======================================= */}
       {/* LEFT COLUMN - TEXT & CONTENT */}
-      {/* ======================================= */}
-      {/* Pure flex container. Centered vertically naturally by the parent. */}
       <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start text-center lg:text-left justify-center relative z-10 gap-5">
         
         {/* Minimal Role Badge */}
@@ -30,62 +27,74 @@ const Hero = () => {
         </h1>
 
         {/* Short Bio */}
-        <div className="flex flex-col gap-3 text-gray-400 max-w-[440px]">
-          <p className="text-base sm:text-lg md:text-xl lg:text-[17px] font-medium text-gray-100 leading-snug">
-            I build scalable, modern, and user-friendly web applications.
-          </p>
+        <div className="flex flex-col gap-2 text-gray-400 max-w-[440px]">
+          <p className="text-[15px] sm:text-lg font-medium text-gray-100 leading-snug">
+          I build scalable, modern, and user-friendly web applications.
+        </p>
           <p className="text-base sm:text-base md:text-xl lg:text-base text-gray-400/90 leading-relaxed md:leading-relaxed hidden sm:block">
             Turning complex ideas into elegant, high-performance digital experiences. I focus on writing clean code and building products that drive real-world impact.
           </p>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-3">
-          <a href="#projects" className="group relative flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm text-white overflow-hidden shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all duration-300 active:scale-95">
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-cyan-600"></span>
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 animate-[shimmer_1.5s_infinite]"></span>
-            <span className="relative flex items-center gap-2 z-10">
-              View Work 
-              <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-            </span>
-          </a>
+      {/* Action Buttons*/}
+<div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
+  
+  {/* View Work (Primary) */}
+  <a href="#projects" className="group relative flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3 rounded-xl font-semibold text-sm text-white overflow-hidden shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)] transition-all duration-300 active:scale-95">
+    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-cyan-600"></span>
+    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 animate-[shimmer_1.5s_infinite]"></span>
+    <span className="relative flex items-center gap-2 z-10">
+      View Work 
+      <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+    </span>
+  </a>
 
-          <a href="#contact" className="group flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm text-white border border-white/10 hover:bg-white/5 transition-all duration-300 active:scale-95">
-            Contact 
-            <FiSend size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
-        </div>
+  {/* Contact */}
+  <a 
+    href="#contact" 
+    className="group relative flex items-center justify-center w-full sm:w-auto gap-2 px-8 py-3 rounded-xl font-semibold text-sm text-white bg-black/20 hover:bg-black/40 border border-transparent transition-all duration-300 active:scale-95 shadow-[0_0_10px_rgba(255,255,255,0.05)]"
+  >
+    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/50 to-cyan-500/50 p-[1px] -z-10">
+      <div className="h-full w-full rounded-xl bg-[#030303]"></div>
+    </div>
+    
+    <span className="relative flex items-center gap-2 z-10">
+      Contact 
+      <FiSend size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform duration-300" />
+    </span>
+  </a>
 
-        {/* Social Links - Hover handled responsively */}
-        <div className="flex items-center gap-4 mt-2">
-          {[
-            { icon: <FiGithub size={18} />, link: "https://github.com" },
-            { icon: <FiLinkedin size={18} />, link: "https://linkedin.com" },
-            { icon: <FiInstagram size={18} />, link: "https://instagram.com" },
-            { icon: <FiMail size={18} />, link: "mailto:your.email@example.com" },
-          ].map((social, index) => (
-            <a 
-              key={index} 
-              href={social.link} 
-              target="_blank" 
-              rel="noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full border transition-all duration-300 text-cyan-400 border-cyan-400 -translate-y-1 shadow-[0_0_10px_rgba(34,211,238,0.4)] lg:text-gray-400 lg:border-white/10 lg:translate-y-0 lg:shadow-none lg:hover:text-cyan-400 lg:hover:border-cyan-400 lg:hover:-translate-y-1 lg:hover:shadow-[0_0_10px_rgba(34,211,238,0.4)]"
-            >
-              {social.icon}
-            </a>
-          ))}
-        </div>
+</div>
+
+{/* Social Links */}
+<div className="flex items-center gap-6 mt-6">
+  {[
+    { icon: <FiGithub size={20} />, link: "https://github.com/manas-2007" },
+    { icon: <FiLinkedin size={20} />, link: "http://www.linkedin.com/in/manas-kumar-patidar-73954a374" },
+    { icon: <FiMail size={20} />, link: "mailto:patidarmanas01@gmail.com" },
+  ].map((social, index) => (
+    <a 
+      key={index} 
+      href={social.link} 
+      target="_blank" 
+      rel="noreferrer"
+      className="w-11 h-11 flex items-center justify-center rounded-full transition-all duration-300 border 
+      text-cyan-400 border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.4)] 
+      lg:hover:text-purple-400 lg:hover:border-purple-400 lg:hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] lg:hover:-translate-y-1"
+    >
+      {social.icon}
+    </a>
+  ))}
+</div>
+
+
         
       </div>
 
 
-      {/* ======================================= */}
       {/* RIGHT COLUMN - IMAGE & GRAPHICS */}
-      {/* ======================================= */}
-      {/* Pure flex container. Uses items-end to naturally anchor the image to the bottom. */}
-      <div className="w-full lg:flex-1 relative flex items-end justify-center lg:justify-end min-h-[400px] lg:min-h-[calc(100vh-7rem)] z-10">
+      <div className="w-full lg:flex-1 relative flex items-end justify-center lg:justify-end min-h-[300px] sm:min-h-[350px] lg:min-h-[calc(100vh-7rem)] z-10">
         
-        {/* Intense Background Glowing Aura */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[350px] lg:w-[450px] h-[350px] md:h-[350px] lg:h-[450px] bg-purple-600/30 rounded-full blur-[50px] md:blur-[100px] lg:blur-[100px] animate-pulse -z-10"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[250px] lg:w-[280px] h-[250px] md:h-[250px] lg:h-[280px] bg-cyan-500/20 rounded-full blur-[40px] md:blur-[80px] lg:blur-[80px] -z-10"></div>
 
@@ -98,7 +107,7 @@ const Hero = () => {
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-purple-500 rounded-full shadow-[0_0_20px_rgba(168,85,247,1)]"></div>
         </div>
 
-        {/* Profile Image - Rests naturally at the bottom due to parent's items-end */}
+        {/* Profile Image */}
         <img 
           src="/profile.jpg" 
           alt="Manas" 
