@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedHeading from './AnimatedHeading';
 import { 
   SiTailwindcss, SiBootstrap, SiJavascript, 
   SiExpress, SiMongodb, SiC, SiCplusplus, 
@@ -85,9 +86,10 @@ const Skills = () => {
               My Skills
             </span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-bold text-white tracking-tight">
-            Technologies I Work With
-          </h2>
+         <AnimatedHeading 
+        text="Technologies I Work With" 
+        className="text-2xl lg:text-3xl mt-1" 
+      />
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-6 w-full">
@@ -111,11 +113,9 @@ const Skills = () => {
                     data-aos-delay={index * 200}
                     className="flex items-center gap-2.5 sm:gap-4 cursor-default"
                   >
-                    {/* Icon Container - Scaled for mobile */}
                     <div className="text-[18px] sm:text-[24px] md:text-[26px]">
                       {skill.icon}
                     </div>
-                    {/* Skill Name -  mobile typography to prevent wrapping */}
                     <span className="text-gray-100 text-[11px] sm:text-[14px] md:text-[15px] font-medium tracking-wide truncate">
                       {skill.name}
                     </span>

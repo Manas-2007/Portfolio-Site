@@ -38,7 +38,6 @@ const Stats = () => {
     <section className="relative pb-8 lg:pb-10 px-5 md:px-12 lg:px-20 xl:px-28 w-full flex justify-center z-10">
       
       {/* Main Container */}
-      {/* Main box ko bhi thoda fade-up effect de diya taaki smooth entry ho */}
       <div 
         data-aos="fade-up" 
         className="w-full max-w-[1300px] bg-[#101219] border border-white/30 rounded-2xl shadow-2xl overflow-hidden"
@@ -47,26 +46,22 @@ const Stats = () => {
         {/* Grid setup: 2 cols on mobile, 4 cols on desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-4 w-full">
           
-          {/* YAHAN CHANGE KIYA HAI: map mein 'index' add kiya taaki delay calculate ho sake */}
           {statsData.map((stat, index) => (
             <div 
               key={stat.id}
               data-aos="fade-up" 
-              data-aos-delay={index * 150} // 0ms, 150ms, 300ms, 450ms ka delay aayega
+              data-aos-delay={index * 150} 
               className={`group relative flex items-center justify-center gap-3 lg:gap-5 py-8 lg:py-10 px-4 overflow-hidden ${stat.borderClasses}`}
             >
               
               <div className="hidden lg:block absolute inset-0 bg-gradient-to-b from-white/[0.08] via-white/[0.03] to-transparent -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></div>
 
-              {/* Internal Content (Icon + Text) */}
               <div className="relative z-10 flex items-center justify-center gap-3 lg:gap-4 w-full max-w-[200px] mx-auto">
                 
-                {/* Icon Container */}
                 <div className="flex-shrink-0 transition-transform duration-300 lg:group-hover:scale-110">
                   {stat.icon}
                 </div>
 
-                {/* Text Container */}
                 <div className="flex flex-col text-left">
                   <h4 className="text-gray-100 text-[22px] lg:text-[28px] font-semibold tracking-wide mb-0.5 leading-none">
                     {stat.value}

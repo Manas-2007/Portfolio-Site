@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRobot, FaReact, FaNodeJs } from 'react-icons/fa';
+import AnimatedHeading from './AnimatedHeading';
 import { SiJavascript } from 'react-icons/si';
 
 const Certifications = () => {
@@ -58,9 +59,10 @@ const Certifications = () => {
               Achievements
             </span>
           </div>
-          <h2 className="text-2xl  sm:text-3xl font-bold text-white tracking-tight">
-            Certifications & Awards
-          </h2>
+          <AnimatedHeading 
+            text="Certifications & Awards" 
+            className="text-2xl sm:text-3xl font-bold text-white tracking-tight" 
+          />
         </div>
 
         {/* CERTIFICATIONS GRID */}

@@ -3,31 +3,43 @@ html {
   scroll-padding-top: 100px; 
 }
 
-/* =========================================
-   🔥 PREMIUM CUSTOM SCROLLBAR 🔥
-========================================= */
-
-/* Firefox ke liye */
+/* PREMIUM CUSTOM SCROLLBAR */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #a855f7 #050505; /* Thumb: Purple, Track: Dark Black */
+  scrollbar-color: #a855f7 #050505; 
 }
 
-/* Chrome, Edge, aur Safari ke liye */
 ::-webkit-scrollbar {
-  width: 8px; /* Patla aur sleek */
+  width: 8px; 
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505; /* Track ka background (dark) */
+  background: #050505; 
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a855f7, #06b6d4); /* Purple to Cyan gradient */
+  background: linear-gradient(to bottom, #a855f7, #06b6d4);
   border-radius: 10px; /* Rounded corners */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #d946ef, #22d3ee); /* Hover par thoda bright (Fuchsia to light Cyan) */
+  background: linear-gradient(to bottom, #d946ef, #22d3ee); 
+}
+
+/*ANIMATED GRADIENT COLORS */
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 5s ease infinite;
 }
