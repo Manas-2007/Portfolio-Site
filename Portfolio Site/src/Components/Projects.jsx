@@ -1,11 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import AnimatedHeading from "./AnimatedHeading";
 
+// 👇 FRAMER MOTION VARIANTS (Cards ko ek-ek karke laane ke liye)
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 }, // Har card 0.2s ke gap par aayega
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 const ProjectCard = ({ project, index, totalProjects }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // 👇 3D TILT LOGIC SETUP
+  const cardRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 20; // X-axis par jhukana
+    const rotateY = -(x - centerX) / 20; // Y-axis par jhukana
+
+    // 3D Transform apply karna
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    card.style.transition = "transform 0.1s ease";
+  };
+
+  const handleMouseLeave = () => {
+    const card = cardRef.current;
+    if (!card) return;
+    // Mouse hatne par wapas normal position par lana
+    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+    card.style.transition = "transform 0.5s ease";
+  };
 
   useEffect(() => {
     if (!project.images || project.images.length === 0) return;
@@ -19,7 +59,12 @@ const ProjectCard = ({ project, index, totalProjects }) => {
   }, [project.images]);
 
   return (
-    <div
+    <motion.div
+      variants={itemVariants} // Animation sequence ke liye
+      ref={cardRef} // 3D Tilt ke liye
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ willChange: "transform" }}
       className={`
         group
         relative
@@ -30,12 +75,10 @@ const ProjectCard = ({ project, index, totalProjects }) => {
         border
         border-white/[0.06]
         overflow-hidden
-        transition-all
+        transition-colors /* Removed transition-all so it doesn't fight with 3D tilt */
         duration-500
-        hover:-translate-y-1
         hover:border-purple-500/30
-        hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]
-
+        hover:shadow-[0_20px_50px_rgba(168,85,247,0.15)]
         ${
           totalProjects % 2 !== 0 && index === totalProjects - 1
             ? "md:col-span-2 md:max-w-[400px] md:mx-auto lg:col-span-1 lg:max-w-none"
@@ -127,7 +170,7 @@ const ProjectCard = ({ project, index, totalProjects }) => {
           ))}
         </div>
 
-        {/*  Footer Button */}
+        {/* Footer Button */}
         <a
           href={project.liveLink}
           target={project.liveLink !== "#" ? "_blank" : "_self"}
@@ -144,12 +187,11 @@ const ProjectCard = ({ project, index, totalProjects }) => {
           />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const Projects = () => {
-  const titleText = "Some Projects I've Built";
   const projectsData = [
     {
       id: 1,
@@ -201,10 +243,10 @@ const Projects = () => {
                 Featured Projects
               </span>
             </div>
-           <AnimatedHeading 
-  text="Some Projects I've Built" 
-  className="text-2xl sm:text-3xl" 
-/>
+            <AnimatedHeading 
+              text="Some Projects I've Built" 
+              className="text-2xl sm:text-3xl" 
+            />
           </div>
 
           <a
@@ -218,8 +260,14 @@ const Projects = () => {
           </a>
         </div>
 
-        {/* PROJECTS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full">
+        {/* 👇 PROJECTS GRID (motion.div wrap kiya hai taki cards ek-ek karke aayein) */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full"
+        >
           {projectsData.map((project, index) => (
             <ProjectCard
               key={project.id}
@@ -228,7 +276,7 @@ const Projects = () => {
               totalProjects={projectsData.length}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

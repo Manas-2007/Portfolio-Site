@@ -35,3 +35,33 @@ export const MagneticHover = ({ children, className = "" }) => (
     {children}
   </motion.div>
 );
+
+export const HolographicBloom = ({ children, className = "" }) => (
+  <div className={`relative group p-[2px] rounded-full overflow-hidden ${className}`}>
+    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-cyan-500 bg-[length:300%_300%] animate-[gradient-shift_3s_ease_infinite] group-hover:blur-[8px] transition-all -z-10"></div>
+    
+    <div className="relative z-10 w-full h-full rounded-full bg-[#030303]">
+      {children}
+    </div>
+  </div>
+);
+
+export const NeonPulseGlow = ({ children, color = "rgba(168, 85, 247, 0.4)", className = "" }) => (
+  <motion.div
+    className={className}
+    animate={{
+      boxShadow: [
+        `0 0 10px ${color}`,
+        `0 0 30px ${color}`,
+        `0 0 10px ${color}`,
+      ],
+    }}
+    transition={{
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  >
+    {children}
+  </motion.div>
+);
