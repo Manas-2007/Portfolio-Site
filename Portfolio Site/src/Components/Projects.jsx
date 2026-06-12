@@ -205,16 +205,16 @@ const Projects = () => {
       images: ["P1_1.jpg", "P1_2.jpg", "P1_3.jpg"],
     },
     {
-      id: 2,
-      title: "TradeBridge Financial Network",
-      description:
-        "An advanced paper-trading platform with real-time WebSocket charts. It features an intelligent algorithm that automatically detects and highlights candlestick patterns to assist user decisions.",
-      techStack: ["React", "Tailwind", "WebSockets", "Trading APIs", "Vite"],
-      placeholderBg: "bg-gradient-to-br from-[#2563eb] to-[#1e3a8a]",
-      liveLink: "#",
-      statusBadge: "In Development",
-      images: ["P3_1.jpg", "P3_3.jpg", "P3_2.jpg"],
-    },
+  id: 2,
+  title: "Crypto Trading Simulator",
+  description:
+    "A high-frequency paper-trading platform that simulates real-time crypto markets. Uses WebSocket streams for live price action, featuring technical analysis indicators and a virtual portfolio tracker managed via Context API.",
+  techStack: ["React", "Context API", "WebSockets", "Lightweight Charts", "Tailwind"],
+  placeholderBg: "bg-gradient-to-br from-[#10b981] to-[#064e3b]",
+  liveLink: "#", 
+  statusBadge: "In Development",
+  images: ["P3_1.jpg", "P3_3.jpg", "P3_2.jpg"],
+},
     {
       id: 3,
       title: "ReCircle Sustainability Network",
