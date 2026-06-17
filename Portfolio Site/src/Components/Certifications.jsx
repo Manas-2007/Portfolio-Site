@@ -95,7 +95,6 @@ const Certifications = () => {
                 {cert.issuer}
               </p>
 
-              {/* Description - Made text smaller and tight for mobile */}
               <p className="text-gray-400 text-[11px] sm:text-[13px] leading-relaxed flex-grow">
                 {cert.description}
               </p>

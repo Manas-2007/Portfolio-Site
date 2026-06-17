@@ -27,7 +27,7 @@ const Navbar = () => {
         </span>
       </div>
 
-      {/* 2. Desktop Tabs (Hidden on Mobile) */}
+      {/* Desktop Tabs */}
       <div className="hidden md:flex items-center gap-10 text-sm font-medium">
         {navLinks.map((link) => {
           const isActive = activeSection === link.toLowerCase();
@@ -64,7 +64,7 @@ const Navbar = () => {
         })}
       </div>
 
-      {/* 3. Desktop Interactive Button (Hidden on Mobile) */}
+      {/* Desktop Interactive Button  */}
       <div className="hidden md:block z-50">
         <button className="relative group flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm text-white overflow-hidden shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] transition-shadow duration-300">
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 via-fuchsia-600 to-cyan-600 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -75,7 +75,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* 4. Mobile Menu Toggle Icon */}
+      {/*  Mobile Menu Toggle Icon */}
       <div className="md:hidden flex items-center z-50">
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

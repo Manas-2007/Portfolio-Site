@@ -14,7 +14,7 @@ const AnimatedHeading = ({ text, className = "" }) => {
         visible: {
           opacity: 1,
           transition: {
-            staggerChildren: 0.05, //wave speed
+            staggerChildren: 0.05,
             delayChildren: 0.1,
           },
         },
@@ -29,7 +29,7 @@ const AnimatedHeading = ({ text, className = "" }) => {
               opacity: 0,
               y: 40,
               scale: 0.5,
-              rotateX: -90, // 3D back-flip
+              rotateX: -90, 
               rotateZ: -15,
               filter: "blur(10px)",
             },
@@ -40,7 +40,6 @@ const AnimatedHeading = ({ text, className = "" }) => {
               rotateX: 0,
               rotateZ: 0,
               filter: "blur(0px)",
-              // PURE RGB FORMAT (Red -> Green -> Blue -> Magenta -> Red)
               color: [
                 "rgb(255, 0, 0)",    
                 "rgb(0, 255, 0)",    
@@ -59,7 +58,7 @@ const AnimatedHeading = ({ text, className = "" }) => {
                 
                 // Color animation ( INFINITE LOOP)
                 color: {
-                  duration: 4, // 4 seconds (1 RGB Cycle)
+                  duration: 4, 
                   ease: "linear",
                   repeat: Infinity, 
                   repeatType: "loop"

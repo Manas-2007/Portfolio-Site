@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Ye line jaruri hai animations chalne ke liye
+import 'aos/dist/aos.css'; 
 import FinalUI from './Components/FinalUI';
 
 function App() {

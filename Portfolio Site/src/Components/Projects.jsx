@@ -3,12 +3,11 @@ import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import AnimatedHeading from "./AnimatedHeading";
 
-// 👇 FRAMER MOTION VARIANTS (Cards ko ek-ek karke laane ke liye)
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 }, // Har card 0.2s ke gap par aayega
+    transition: { staggerChildren: 0.2 },
   },
 };
 
@@ -20,7 +19,6 @@ const itemVariants = {
 const ProjectCard = ({ project, index, totalProjects }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
-  // 👇 3D TILT LOGIC SETUP
   const cardRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -31,10 +29,9 @@ const ProjectCard = ({ project, index, totalProjects }) => {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / 20; // X-axis par jhukana
-    const rotateY = -(x - centerX) / 20; // Y-axis par jhukana
+    const rotateX = (y - centerY) / 20;
+    const rotateY = -(x - centerX) / 20; 
 
-    // 3D Transform apply karna
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
     card.style.transition = "transform 0.1s ease";
   };
@@ -42,7 +39,6 @@ const ProjectCard = ({ project, index, totalProjects }) => {
   const handleMouseLeave = () => {
     const card = cardRef.current;
     if (!card) return;
-    // Mouse hatne par wapas normal position par lana
     card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
     card.style.transition = "transform 0.5s ease";
   };
@@ -60,8 +56,8 @@ const ProjectCard = ({ project, index, totalProjects }) => {
 
   return (
     <motion.div
-      variants={itemVariants} // Animation sequence ke liye
-      ref={cardRef} // 3D Tilt ke liye
+      variants={itemVariants}
+      ref={cardRef} 
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ willChange: "transform" }}
@@ -260,7 +256,6 @@ const Projects = () => {
           </a>
         </div>
 
-        {/* 👇 PROJECTS GRID (motion.div wrap kiya hai taki cards ek-ek karke aayein) */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"

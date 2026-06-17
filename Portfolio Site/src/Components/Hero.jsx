@@ -107,15 +107,13 @@ const Hero = () => {
           </div>
 
           
-        {/* 🔥 Profile Image (FULL BODY, NO CROPPING) 🔥 */}
+        {/* Profile Image  */}
           <div className="relative z-10 w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[460px] flex justify-center items-center">
             
-            {/* RGB Glowing Aura (Image ke piche chamkegi) */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[80%] bg-gradient-to-r from-purple-600 via-cyan-500 to-fuchsia-500 rounded-full blur-[60px] animate-[gradient-shift_4s_linear_infinite] opacity-60 -z-10"></div>
 
-            {/* Floating Full Image */}
             <motion.img 
-              animate={{ y: [-12, 12, -12] }} // Hawa mein float karne ka effect
+              animate={{ y: [-12, 12, -12] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               src="/profile.jpg" 
               alt="Manas" 

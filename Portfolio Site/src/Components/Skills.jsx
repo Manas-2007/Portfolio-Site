@@ -73,7 +73,6 @@ const Skills = () => {
         `}
       </style>
 
-      {/* Background Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-600/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
       <div className="w-full max-w-[1300px] flex flex-col items-start">
